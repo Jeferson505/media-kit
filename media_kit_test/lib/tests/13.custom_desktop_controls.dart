@@ -6,7 +6,9 @@ import 'package:media_kit_test/common/widgets.dart';
 import 'package:media_kit_video/media_kit_video.dart';
 
 class CustomDesktopControls extends StatefulWidget {
-  const CustomDesktopControls({super.key});
+  const CustomDesktopControls({
+    super.key,
+  });
 
   @override
   State<CustomDesktopControls> createState() => _CustomDesktopControlsState();

@@ -12,6 +12,8 @@
 /// A log message sent by the libmpv backend.
 ///
 /// {@endtemplate}
+library;
+
 class PlayerLog {
   /// The sender of the message.
   final String prefix;

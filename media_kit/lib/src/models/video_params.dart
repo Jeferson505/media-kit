@@ -12,6 +12,8 @@
 /// Video parameters, as output by the decoder (with overrides like aspect etc. applied). This has a number of sub-properties.
 ///
 /// {@endtemplate}
+library;
+
 class VideoParams {
   /// The pixel format as string. This uses the same names as used in other places of mpv.
   final String? pixelformat;

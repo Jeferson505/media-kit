@@ -4,6 +4,8 @@
 /// All rights reserved.
 /// Use of this source code is governed by MIT license that can be found in the LICENSE file.
 // ignore_for_file: non_constant_identifier_names
+library;
+
 import 'package:flutter/cupertino.dart';
 import 'package:media_kit_video/media_kit_video.dart';
 
@@ -54,10 +56,10 @@ class CupertinoVideoControlsTheme extends InheritedWidget {
   final CupertinoVideoControlsThemeData normal;
   final CupertinoVideoControlsThemeData fullscreen;
   const CupertinoVideoControlsTheme({
-    super.key,
     required this.normal,
     required this.fullscreen,
     required super.child,
+    super.key,
   });
 
   static CupertinoVideoControlsTheme? maybeOf(BuildContext context) {
@@ -82,7 +84,7 @@ class CupertinoVideoControlsTheme extends InheritedWidget {
 
 /// {@macro cupertino_video_controls}
 class _CupertinoVideoControls extends StatefulWidget {
-  const _CupertinoVideoControls({Key? key}) : super(key: key);
+  const _CupertinoVideoControls();
 
   @override
   State<_CupertinoVideoControls> createState() =>

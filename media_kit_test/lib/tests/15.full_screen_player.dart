@@ -5,11 +5,12 @@ import 'package:media_kit_video/media_kit_video.dart';
 import 'package:universal_platform/universal_platform.dart';
 
 import '../common/globals.dart';
-import '../common/widgets.dart';
 import '../common/sources/sources.dart';
 
 class FullScreenPlayer extends StatefulWidget {
-  const FullScreenPlayer({super.key});
+  const FullScreenPlayer({
+    super.key,
+  });
 
   @override
   State<FullScreenPlayer> createState() => _FullScreenPlayerState();
@@ -40,38 +41,42 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
     super.dispose();
   }
 
+  Future<void> _onExitFullscreen() {
+    return defaultExitNativeFullscreen().whenComplete(() {
+      if (!UniversalPlatform.isDesktop) {
+        Navigator.of(context).popUntil((route) => route.isFirst);
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return // Wrap [Video] widget with [MaterialVideoControlsTheme].
         MaterialVideoControlsTheme(
-            normal: MaterialVideoControlsThemeData(
-              topButtonBar: topBar(context),
-            ),
-            fullscreen: MaterialVideoControlsThemeData(
-              topButtonBar: topBar(context),
-            ),
-            child: // Wrap [Video] widget with [MaterialDesktopVideoControlsTheme].
-                MaterialDesktopVideoControlsTheme(
-                    normal: MaterialDesktopVideoControlsThemeData(
-                      topButtonBar: topBar(context),
-                    ),
-                    fullscreen: MaterialDesktopVideoControlsThemeData(
-                      topButtonBar: topBar(context),
-                    ),
-                    child: Video(
-                      key: key,
-                      controller: controller,
-                      onEnterFullscreen: () async {
-                        await defaultEnterNativeFullscreen();
-                      },
-                      onExitFullscreen: () async {
-                        await defaultExitNativeFullscreen();
-                        if (!UniversalPlatform.isDesktop) {
-                          Navigator.of(context)
-                              .popUntil((route) => route.isFirst);
-                        }
-                      },
-                    )));
+      normal: MaterialVideoControlsThemeData(
+        topButtonBar: topBar(context),
+      ),
+      fullscreen: MaterialVideoControlsThemeData(
+        topButtonBar: topBar(context),
+      ),
+      child: // Wrap [Video] widget with [MaterialDesktopVideoControlsTheme].
+          MaterialDesktopVideoControlsTheme(
+        normal: MaterialDesktopVideoControlsThemeData(
+          topButtonBar: topBar(context),
+        ),
+        fullscreen: MaterialDesktopVideoControlsThemeData(
+          topButtonBar: topBar(context),
+        ),
+        child: Video(
+          key: key,
+          controller: controller,
+          onEnterFullscreen: () async {
+            await defaultEnterNativeFullscreen();
+          },
+          onExitFullscreen: _onExitFullscreen,
+        ),
+      ),
+    );
   }
 
   List<Widget> topBar(BuildContext context) {

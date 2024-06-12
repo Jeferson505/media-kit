@@ -6,7 +6,9 @@ import '../common/globals.dart';
 import '../common/sources/sources.dart';
 
 class VideoControllerSetSizeScreen extends StatefulWidget {
-  const VideoControllerSetSizeScreen({Key? key}) : super(key: key);
+  const VideoControllerSetSizeScreen({
+    super.key,
+  });
 
   @override
   State<VideoControllerSetSizeScreen> createState() =>

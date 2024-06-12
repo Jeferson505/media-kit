@@ -14,6 +14,8 @@
 /// A playable item in [Player]. It can be [Media] or [Playlist].
 ///
 /// {@endtemplate}
+library;
+
 abstract class Playable {
   /// {@macro playable}
   const Playable();

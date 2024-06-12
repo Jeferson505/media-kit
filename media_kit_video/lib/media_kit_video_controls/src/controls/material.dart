@@ -4,6 +4,8 @@
 /// All rights reserved.
 /// Use of this source code is governed by MIT license that can be found in the LICENSE file.
 // ignore_for_file: non_constant_identifier_names
+library;
+
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:media_kit_video/media_kit_video.dart';
@@ -450,10 +452,10 @@ class MaterialVideoControlsTheme extends InheritedWidget {
   final MaterialVideoControlsThemeData normal;
   final MaterialVideoControlsThemeData fullscreen;
   const MaterialVideoControlsTheme({
-    super.key,
     required this.normal,
     required this.fullscreen,
     required super.child,
+    super.key,
   });
 
   static MaterialVideoControlsTheme? maybeOf(BuildContext context) {
@@ -1416,9 +1418,10 @@ class _MaterialVideoControlsState extends State<_MaterialVideoControls> {
                                 .seekOnDoubleTapLayoutWidgetRatios[1] >
                             0)
                           Expanded(
-                              flex: _theme(context)
-                                  .seekOnDoubleTapLayoutWidgetRatios[1],
-                              child: SizedBox()),
+                            flex: _theme(context)
+                                .seekOnDoubleTapLayoutWidgetRatios[1],
+                            child: const SizedBox(),
+                          ),
                         Expanded(
                           flex: _theme(context)
                               .seekOnDoubleTapLayoutWidgetRatios[2],
@@ -1487,11 +1490,11 @@ class MaterialSeekBar extends StatefulWidget {
   final VoidCallback? onSeekEnd;
 
   const MaterialSeekBar({
-    Key? key,
     this.delta,
     this.onSeekStart,
     this.onSeekEnd,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   MaterialSeekBarState createState() => MaterialSeekBarState();
@@ -1737,9 +1740,9 @@ class MaterialPlayOrPauseButton extends StatefulWidget {
   final Color? iconColor;
 
   const MaterialPlayOrPauseButton({
-    super.key,
     this.iconSize,
     this.iconColor,
+    super.key,
   });
 
   @override
@@ -1815,11 +1818,11 @@ class MaterialSkipNextButton extends StatelessWidget {
   final Color? iconColor;
 
   const MaterialSkipNextButton({
-    Key? key,
     this.icon,
     this.iconSize,
     this.iconColor,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -1851,11 +1854,11 @@ class MaterialSkipPreviousButton extends StatelessWidget {
   final Color? iconColor;
 
   const MaterialSkipPreviousButton({
-    Key? key,
     this.icon,
     this.iconSize,
     this.iconColor,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -1887,11 +1890,11 @@ class MaterialFullscreenButton extends StatelessWidget {
   final Color? iconColor;
 
   const MaterialFullscreenButton({
-    Key? key,
     this.icon,
     this.iconSize,
     this.iconColor,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -1924,12 +1927,12 @@ class MaterialCustomButton extends StatelessWidget {
   final VoidCallback onPressed;
 
   const MaterialCustomButton({
-    Key? key,
     this.icon,
     this.iconSize,
     this.iconColor,
     required this.onPressed,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -1949,7 +1952,10 @@ class MaterialCustomButton extends StatelessWidget {
 class MaterialPositionIndicator extends StatefulWidget {
   /// Overriden [TextStyle] for the [MaterialPositionIndicator].
   final TextStyle? style;
-  const MaterialPositionIndicator({super.key, this.style});
+  const MaterialPositionIndicator({
+    this.style,
+    super.key,
+  });
 
   @override
   MaterialPositionIndicatorState createState() =>
@@ -2016,10 +2022,9 @@ class _BackwardSeekIndicator extends StatefulWidget {
   final void Function(Duration) onChanged;
   final void Function(Duration) onSubmitted;
   const _BackwardSeekIndicator({
-    Key? key,
     required this.onChanged,
     required this.onSubmitted,
-  }) : super(key: key);
+  });
 
   @override
   State<_BackwardSeekIndicator> createState() => _BackwardSeekIndicatorState();
@@ -2103,10 +2108,9 @@ class _ForwardSeekIndicator extends StatefulWidget {
   final void Function(Duration) onChanged;
   final void Function(Duration) onSubmitted;
   const _ForwardSeekIndicator({
-    Key? key,
     required this.onChanged,
     required this.onSubmitted,
-  }) : super(key: key);
+  });
 
   @override
   State<_ForwardSeekIndicator> createState() => _ForwardSeekIndicatorState();

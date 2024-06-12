@@ -4,6 +4,8 @@
 /// All rights reserved.
 /// Use of this source code is governed by MIT license that can be found in the LICENSE file.
 // ignore_for_file: camel_case_types
+library;
+
 import 'package:media_kit/src/player/native/player/player.dart';
 import 'package:media_kit/src/player/web/player/player.dart';
 

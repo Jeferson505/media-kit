@@ -3,8 +3,9 @@
 /// Copyright © 2021 & onwards, Hitesh Kumar Saini <saini123hitesh@gmail.com>.
 /// All rights reserved.
 /// Use of this source code is governed by MIT license that can be found in the LICENSE file.
+library;
+
 import 'dart:async';
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 import 'package:media_kit_video/src/video_controller/video_controller.dart';
@@ -14,6 +15,8 @@ import 'package:media_kit_video/src/video_controller/video_controller.dart';
 /// ------------
 ///
 /// [SubtitleView] widget is used to display the subtitles on top of the [Video].
+///
+/// {@endtemplate}
 class SubtitleView extends StatefulWidget {
   /// The [VideoController] reference to control this [SubtitleView] output.
   final VideoController controller;
@@ -23,10 +26,10 @@ class SubtitleView extends StatefulWidget {
 
   /// {@macro subtitle_view}
   const SubtitleView({
-    Key? key,
     required this.controller,
     required this.configuration,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   SubtitleViewState createState() => SubtitleViewState();
@@ -85,14 +88,8 @@ class SubtitleViewState extends State<SubtitleView> {
     return LayoutBuilder(
       builder: (context, constraints) {
         // Calculate the visible text scale factor.
-        final textScaleFactor = widget.configuration.textScaleFactor ??
-            MediaQuery.of(context).textScaleFactor *
-                sqrt(
-                  ((constraints.maxWidth * constraints.maxHeight) /
-                          (kTextScaleFactorReferenceWidth *
-                              kTextScaleFactorReferenceHeight))
-                      .clamp(0.0, 1.0),
-                );
+        final textScaler = widget.configuration.textScaler ??
+            MediaQuery.of(context).textScaler;
         return Material(
           color: Colors.transparent,
           child: AnimatedContainer(
@@ -106,7 +103,7 @@ class SubtitleViewState extends State<SubtitleView> {
               ].join('\n'),
               style: widget.configuration.style,
               textAlign: widget.configuration.textAlign,
-              textScaleFactor: textScaleFactor,
+              textScaler: textScaler,
             ),
           ),
         );
@@ -132,7 +129,7 @@ class SubtitleViewConfiguration {
   final TextAlign textAlign;
 
   /// The text scale factor to be used for the subtitles.
-  final double? textScaleFactor;
+  final TextScaler? textScaler;
 
   /// The padding to be used for the subtitles.
   final EdgeInsets padding;
@@ -150,7 +147,7 @@ class SubtitleViewConfiguration {
       backgroundColor: Color(0xaa000000),
     ),
     this.textAlign = TextAlign.center,
-    this.textScaleFactor,
+    this.textScaler,
     this.padding = const EdgeInsets.fromLTRB(
       16.0,
       0.0,

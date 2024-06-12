@@ -4,6 +4,8 @@
 /// All rights reserved.
 /// Use of this source code is governed by MIT license that can be found in the LICENSE file.
 // ignore_for_file: avoid_web_libraries_in_flutter
+library;
+
 import 'dart:async';
 import 'dart:js' as js;
 import 'dart:html' as html;

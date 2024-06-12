@@ -1,0 +1,7 @@
+# This is a generated file; do not edit or check into version control.
+media_kit_libs_android_video=/home/atom/Documents/my_projects/media-kit/libs/android/media_kit_libs_android_video/
+media_kit_libs_ios_video=/home/atom/Documents/my_projects/media-kit/libs/ios/media_kit_libs_ios_video/
+media_kit_libs_linux=/home/atom/Documents/my_projects/media-kit/libs/linux/media_kit_libs_linux/
+media_kit_libs_macos_video=/home/atom/Documents/my_projects/media-kit/libs/macos/media_kit_libs_macos_video/
+media_kit_libs_windows_video=/home/atom/Documents/my_projects/media-kit/libs/windows/media_kit_libs_windows_video/
+media_kit_native_event_loop=/home/atom/Documents/my_projects/media-kit/media_kit_native_event_loop/

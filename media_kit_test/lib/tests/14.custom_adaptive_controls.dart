@@ -6,7 +6,9 @@ import 'package:media_kit_test/common/widgets.dart';
 import 'package:media_kit_video/media_kit_video.dart';
 
 class CustomAdaptiveControls extends StatefulWidget {
-  const CustomAdaptiveControls({super.key});
+  const CustomAdaptiveControls({
+    super.key,
+  });
 
   @override
   State<CustomAdaptiveControls> createState() => _CustomAdaptiveControlsState();

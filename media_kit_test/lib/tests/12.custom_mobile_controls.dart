@@ -6,7 +6,9 @@ import 'package:media_kit_test/common/widgets.dart';
 import 'package:media_kit_video/media_kit_video.dart';
 
 class CustomMobileControls extends StatefulWidget {
-  const CustomMobileControls({super.key});
+  const CustomMobileControls({
+    super.key,
+  });
 
   @override
   State<CustomMobileControls> createState() => _CustomMobileControlsState();

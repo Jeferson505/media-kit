@@ -4,6 +4,8 @@
 /// All rights reserved.
 /// Use of this source code is governed by MIT license that can be found in the LICENSE file.
 // ignore_for_file: constant_identifier_names
+library;
+
 import 'package:media_kit_video/media_kit_video.dart';
 
 /// {@template no_video_controls}

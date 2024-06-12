@@ -5,6 +5,8 @@
 /// Use of this source code is governed by MIT license that can be found in the LICENSE file.
 
 /// Extension methods for [Duration].
+library;
+
 extension DurationExtension on Duration {
   /// Returns clamp of [Duration] between [min] and [max].
   Duration clamp(Duration min, Duration max) {

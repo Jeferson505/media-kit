@@ -40,7 +40,10 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   final Widget child;
-  const MyApp(this.child, {super.key});
+  const MyApp(
+    this.child, {
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +65,9 @@ class MyApp extends StatelessWidget {
 }
 
 class PrimaryScreen extends StatelessWidget {
-  const PrimaryScreen({super.key});
+  const PrimaryScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -315,7 +320,9 @@ class PrimaryScreen extends StatelessWidget {
 }
 
 class DownloadingScreen extends StatelessWidget {
-  const DownloadingScreen({Key? key}) : super(key: key);
+  const DownloadingScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -4,6 +4,8 @@
 /// All rights reserved.
 /// Use of this source code is governed by MIT license that can be found in the LICENSE file.
 // ignore_for_file: avoid_web_libraries_in_flutter
+library;
+
 import 'dart:html';
 import 'dart:async';
 import 'package:flutter/widgets.dart';
@@ -27,7 +29,7 @@ import 'package:media_kit_video/src/utils/wakelock.dart';
 ///
 /// ```dart
 /// class MyScreen extends StatefulWidget {
-///   const MyScreen({Key? key}) : super(key: key);
+///   const MyScreen({Key? key});
 ///   @override
 ///   State<MyScreen> createState() => MyScreenState();
 /// }
@@ -111,7 +113,6 @@ class Video extends StatefulWidget {
 
   /// {@macro video}
   const Video({
-    Key? key,
     required this.controller,
     this.width,
     this.height,
@@ -127,7 +128,8 @@ class Video extends StatefulWidget {
     this.subtitleViewConfiguration = const SubtitleViewConfiguration(),
     this.onEnterFullscreen = defaultEnterNativeFullscreen,
     this.onExitFullscreen = defaultExitNativeFullscreen,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<Video> createState() => VideoState();

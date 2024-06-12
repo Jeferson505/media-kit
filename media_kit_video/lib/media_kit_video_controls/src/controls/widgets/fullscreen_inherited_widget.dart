@@ -3,6 +3,8 @@
 /// Copyright © 2021 & onwards, Hitesh Kumar Saini <saini123hitesh@gmail.com>.
 /// All rights reserved.
 /// Use of this source code is governed by MIT license that can be found in the LICENSE file.
+library;
+
 import 'package:flutter/widgets.dart';
 import 'package:media_kit_video/media_kit_video.dart';
 
@@ -17,9 +19,9 @@ class FullscreenInheritedWidget extends InheritedWidget {
   final VideoState parent;
 
   FullscreenInheritedWidget({
-    super.key,
     required this.parent,
     required Widget child,
+    super.key,
   }) : super(child: _FullscreenInheritedWidgetPopScope(child: child));
 
   static FullscreenInheritedWidget? maybeOf(BuildContext context) {
@@ -61,12 +63,8 @@ class _FullscreenInheritedWidgetPopScopeState
     extends State<_FullscreenInheritedWidgetPopScope> {
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
-        // Make sure to exit native fullscreen when this route is popped from the navigator.
-        await onExitFullscreen(context)?.call();
-        return true;
-      },
+    return PopScope(
+      onPopInvoked: (didPop) => onExitFullscreen(context)?.call(),
       child: widget.child,
     );
   }

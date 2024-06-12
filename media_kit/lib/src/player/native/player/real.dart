@@ -3,6 +3,8 @@
 /// Copyright © 2021 & onwards, Hitesh Kumar Saini <saini123hitesh@gmail.com>.
 /// All rights reserved.
 /// Use of this source code is governed by MIT license that can be found in the LICENSE file.
+library;
+
 import 'dart:io';
 import 'dart:ffi';
 import 'dart:async';
@@ -2353,7 +2355,9 @@ class NativePlayer extends PlatformPlayer {
             if (start != null) {
               try {
                 final property = 'start'.toNativeUtf8();
-                final value = (start.inMilliseconds / 1000).toStringAsFixed(3).toNativeUtf8();
+                final value = (start.inMilliseconds / 1000)
+                    .toStringAsFixed(3)
+                    .toNativeUtf8();
                 mpv.mpv_set_property_string(
                   ctx,
                   property.cast(),
@@ -2370,7 +2374,9 @@ class NativePlayer extends PlatformPlayer {
             if (end != null) {
               try {
                 final property = 'end'.toNativeUtf8();
-                final value = (end.inMilliseconds / 1000).toStringAsFixed(3).toNativeUtf8();
+                final value = (end.inMilliseconds / 1000)
+                    .toStringAsFixed(3)
+                    .toNativeUtf8();
                 mpv.mpv_set_property_string(
                   ctx,
                   property.cast(),
@@ -2686,7 +2692,7 @@ class NativePlayer extends PlatformPlayer {
     final pointers = args.map<Pointer<Utf8>>((e) => e.toNativeUtf8()).toList();
     final arr = calloc<Pointer<Utf8>>(128);
     for (int i = 0; i < args.length; i++) {
-      arr.elementAt(i).value = pointers[i];
+      arr[i] = pointers[i];
     }
     mpv.mpv_command(
       ctx,

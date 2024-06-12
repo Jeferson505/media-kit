@@ -3,12 +3,13 @@
 /// Copyright © 2021 & onwards, Hitesh Kumar Saini <saini123hitesh@gmail.com>.
 /// All rights reserved.
 /// Use of this source code is governed by MIT license that can be found in the LICENSE file.
+library;
+
 import 'dart:io';
 import 'dart:async';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/services.dart';
 import 'package:media_kit_video/media_kit_video_controls/media_kit_video_controls.dart';
-import 'package:media_kit_video/media_kit_video_controls/src/controls/methods/video_state.dart';
 
 import 'package:media_kit_video/src/subtitle/subtitle_view.dart';
 import 'package:media_kit_video/media_kit_video_controls/media_kit_video_controls.dart'
@@ -32,7 +33,7 @@ import 'package:media_kit_video/src/video_controller/platform_video_controller.d
 ///
 /// ```dart
 /// class MyScreen extends StatefulWidget {
-///   const MyScreen({Key? key}) : super(key: key);
+///   const MyScreen({Key? key});
 ///   @override
 ///   State<MyScreen> createState() => MyScreenState();
 /// }
@@ -116,7 +117,6 @@ class Video extends StatefulWidget {
 
   /// {@macro video}
   const Video({
-    Key? key,
     required this.controller,
     this.width,
     this.height,
@@ -132,7 +132,8 @@ class Video extends StatefulWidget {
     this.subtitleViewConfiguration = const SubtitleViewConfiguration(),
     this.onEnterFullscreen = defaultEnterNativeFullscreen,
     this.onExitFullscreen = defaultExitNativeFullscreen,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<Video> createState() => VideoState();
@@ -310,10 +311,9 @@ class VideoState extends State<Video> with WidgetsBindingObserver {
       subscription.cancel();
     }
     if (_disposeNotifiers) {
-        _videoViewParametersNotifier.dispose();
-        _contextNotifier.dispose();
-        VideoStateInheritedWidgetContextNotifierState.fallback.remove(this);
-      
+      _videoViewParametersNotifier.dispose();
+      _contextNotifier.dispose();
+      VideoStateInheritedWidgetContextNotifierState.fallback.remove(this);
     }
 
     super.dispose();

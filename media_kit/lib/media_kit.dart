@@ -3,8 +3,7 @@
 /// Copyright © 2021 & onwards, Hitesh Kumar Saini <saini123hitesh@gmail.com>.
 /// All rights reserved.
 /// Use of this source code is governed by MIT license that can be found in the LICENSE file.
-
-// ignore_for_file: camel_case_types
+library;
 
 export 'package:media_kit/src/media_kit.dart';
 

@@ -12,6 +12,8 @@
 /// Audio format as output by the audio decoder.
 ///
 /// {@endtemplate}
+library;
+
 class AudioParams {
   /// The sample format as string. This uses the same names as used in other places of mpv.
   final String? format;

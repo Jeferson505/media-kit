@@ -3,6 +3,8 @@
 /// Copyright © 2021 & onwards, Hitesh Kumar Saini <saini123hitesh@gmail.com>.
 /// All rights reserved.
 /// Use of this source code is governed by MIT license that can be found in the LICENSE file.
+library;
+
 import 'dart:collection';
 
 import 'package:flutter/widgets.dart';
@@ -21,12 +23,12 @@ class VideoStateInheritedWidget extends InheritedWidget {
 
   final bool disposeNotifiers;
   VideoStateInheritedWidget({
-    super.key,
     required this.state,
     required this.contextNotifier,
     required this.videoViewParametersNotifier,
     required Widget child,
     this.disposeNotifiers = true,
+    super.key,
   }) : super(
           child: VideoStateInheritedWidgetContextNotifier(
             state: state,
@@ -70,12 +72,12 @@ class VideoStateInheritedWidgetContextNotifier extends StatefulWidget {
   final Widget child;
 
   const VideoStateInheritedWidgetContextNotifier({
-    super.key,
     required this.state,
     required this.contextNotifier,
     required this.videoViewParametersNotifier,
     required this.disposeNotifiers,
     required this.child,
+    super.key,
   });
 
   @override

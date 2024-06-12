@@ -12,6 +12,8 @@
 /// A [PlaylistMode] represents the mode of playback for a [Playlist] loaded in [Player].
 ///
 /// {@endtemplate}
+library;
+
 enum PlaylistMode {
   /// End playback once end of the playlist is reached.
   none,

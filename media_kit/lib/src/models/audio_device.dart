@@ -12,6 +12,8 @@
 /// Represents an audio device which may be used for output in [Player].
 ///
 /// {@endtemplate}
+library;
+
 class AudioDevice {
   /// Name.
   final String name;

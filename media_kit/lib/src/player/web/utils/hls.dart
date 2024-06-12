@@ -3,6 +3,8 @@
 /// Copyright © 2021 & onwards, WanJiMi.
 /// All rights reserved.
 /// Use of this source code is governed by MIT license that can be found in the LICENSE file.
+library;
+
 import 'dart:async';
 import 'dart:html' as html;
 import 'package:js/js.dart' as js;

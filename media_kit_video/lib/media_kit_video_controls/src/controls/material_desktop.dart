@@ -4,6 +4,8 @@
 /// All rights reserved.
 /// Use of this source code is governed by MIT license that can be found in the LICENSE file.
 // ignore_for_file: non_constant_identifier_names
+library;
+
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
@@ -336,10 +338,10 @@ class MaterialDesktopVideoControlsTheme extends InheritedWidget {
   final MaterialDesktopVideoControlsThemeData normal;
   final MaterialDesktopVideoControlsThemeData fullscreen;
   const MaterialDesktopVideoControlsTheme({
-    super.key,
     required this.normal,
     required this.fullscreen,
     required super.child,
+    super.key,
   });
 
   static MaterialDesktopVideoControlsTheme? maybeOf(BuildContext context) {
@@ -629,7 +631,6 @@ class _MaterialDesktopVideoControlsState
                           toggleFullscreen(context);
                         }
                       },
-
                 onPanUpdate: _theme(context).modifyVolumeOnScroll
                     ? (e) {
                         if (e.delta.dy > 0) {
@@ -878,10 +879,10 @@ class MaterialDesktopSeekBar extends StatefulWidget {
   final VoidCallback? onSeekEnd;
 
   const MaterialDesktopSeekBar({
-    Key? key,
     this.onSeekStart,
     this.onSeekEnd,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   MaterialDesktopSeekBarState createState() => MaterialDesktopSeekBarState();
@@ -1117,9 +1118,9 @@ class MaterialDesktopPlayOrPauseButton extends StatefulWidget {
   final Color? iconColor;
 
   const MaterialDesktopPlayOrPauseButton({
-    super.key,
     this.iconSize,
     this.iconColor,
+    super.key,
   });
 
   @override
@@ -1194,11 +1195,11 @@ class MaterialDesktopSkipNextButton extends StatelessWidget {
   final Color? iconColor;
 
   const MaterialDesktopSkipNextButton({
-    Key? key,
     this.icon,
     this.iconSize,
     this.iconColor,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -1230,11 +1231,11 @@ class MaterialDesktopSkipPreviousButton extends StatelessWidget {
   final Color? iconColor;
 
   const MaterialDesktopSkipPreviousButton({
-    Key? key,
     this.icon,
     this.iconSize,
     this.iconColor,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -1266,11 +1267,11 @@ class MaterialDesktopFullscreenButton extends StatelessWidget {
   final Color? iconColor;
 
   const MaterialDesktopFullscreenButton({
-    Key? key,
     this.icon,
     this.iconSize,
     this.iconColor,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -1303,12 +1304,12 @@ class MaterialDesktopCustomButton extends StatelessWidget {
   final VoidCallback onPressed;
 
   const MaterialDesktopCustomButton({
-    Key? key,
+    super.key,
     this.icon,
     this.iconSize,
     this.iconColor,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -1344,13 +1345,13 @@ class MaterialDesktopVolumeButton extends StatefulWidget {
   final double? sliderWidth;
 
   const MaterialDesktopVolumeButton({
-    super.key,
     this.iconSize,
     this.iconColor,
     this.volumeMuteIcon,
     this.volumeLowIcon,
     this.volumeHighIcon,
     this.sliderWidth,
+    super.key,
   });
 
   @override
@@ -1528,7 +1529,10 @@ class MaterialDesktopVolumeButtonState
 class MaterialDesktopPositionIndicator extends StatefulWidget {
   /// Overriden [TextStyle] for the [MaterialDesktopPositionIndicator].
   final TextStyle? style;
-  const MaterialDesktopPositionIndicator({super.key, this.style});
+  const MaterialDesktopPositionIndicator({
+    this.style,
+    super.key,
+  });
 
   @override
   MaterialDesktopPositionIndicatorState createState() =>

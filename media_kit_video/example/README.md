@@ -20,7 +20,7 @@ void main() {
 }
 
 class MyScreen extends StatefulWidget {
-  const MyScreen({Key? key}) : super(key: key);
+  const MyScreen({Key? key});
   @override
   State<MyScreen> createState() => MyScreenState();
 }
