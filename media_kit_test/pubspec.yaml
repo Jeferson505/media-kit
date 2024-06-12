@@ -26,9 +26,6 @@ dependencies:
   universal_platform: ^1.1.0
 
 dependency_overrides:
-  # Force dependency overrides for all (direct or transitive) dependencies
-  meta: ^1.15.0
-  
   media_kit:
     path: ../media_kit
   media_kit_video:

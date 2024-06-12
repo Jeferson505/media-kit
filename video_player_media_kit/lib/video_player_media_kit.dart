@@ -3,6 +3,8 @@
 /// Copyright © 2023 & onwards, Abdelaziz Mahdy <abdelaziz.h.mahdy@gmail.com>.
 /// All rights reserved.
 /// Use of this source code is governed by MIT license that can be found in the LICENSE file.
+library;
+
 import 'package:media_kit/media_kit.dart';
 import 'package:universal_platform/universal_platform.dart';
 
